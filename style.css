@@ -27,9 +27,9 @@
   }
   
   body {
-    background: black;
+    background: steelblue;
     color: #FFF;
-    font-family: Helvetica;
+    font-family: Arial, Helvetica, sans-serif;
     text-align: center;
     margin: 0;
   }
@@ -56,6 +56,19 @@
 
   #currentDayBox {
     border: 1px solid rgba(255,255,255,0.8);
+  }
+
+  header {
+    font-size: 30px;
+    
+  }
+
+  @media (min-width: 320px) and (max-width: 480px) {
+    
+  }
+  
+  @media (min-width: 768px) and (max-width: 1024px) {
+    
   }
   
   

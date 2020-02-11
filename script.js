@@ -1,6 +1,6 @@
 const APILink = "https://api.openweathermap.org/data/2.5/weather?q="
 const APIKey = "&appid=21f978b6bfc1044800d6bb1cea63c167"
-var fiveDayForcastDisplay;
+var fiveDayForecastDisplay;
 const forecastLink = "https://api.openweathermap.org/data/2.5/forecast?q="
 $("#currentDayBox").hide()
 $("#foreCastDisplay").hide()
@@ -36,6 +36,7 @@ $.ajax({
     lon = response.coord.lon
     queryURL3 = APILink2 + lat + "&lon=" + lon
     
+    
     $.ajax({
         url: queryURL3,
         method: "Get"
@@ -43,7 +44,27 @@ $.ajax({
     }).then(function(response){
         $("#currentUV").text("UV Index: " + response[0].value)
     })
-
-
 })
-})
+    $.ajax({
+        url: queryURL2,
+        method: "Get"
+    }).then(function(response){
+        var forecastHours = response.list
+        for (i = 0; i < forecastHours.length; i++){
+            if (forecastHours[i].dt_txt[12] === "2"){
+                var forecastDate = forecastHours[i].dt_txt
+                var forecastDateDisplay = forecastDate.charAt(6) + "/" + forecastDate.charAt(8) + forecastDate.charAt(9) +
+                "/" + forecastDate.charAt(0) + forecastDate.charAt(1) + forecastDate.charAt(2) + forecastDate.charAt(3)
+                var forecastIcon = forecastHours[i].weather[0].icon;
+                var forecastIconURL = "http://openweathermap.org/img/w/" + forecastIcon + ".png";
+                var forecastTempeature = forecastHours[i].main.temp * (9/5) - 459.67
+                var forecastHumidity = forecastHours[i].main.humidity
+                if (fiveDayForecastDisplay ===  false || fiveDayForecastDisplay === undefined){
+                    $("#forecastDisplay").append("<div class= forecastDays>" + "<h3>" + forecastDateDisplay + "<h3>" + "<img class = 'icon' src=" + forecastIconURL + " alt= 'weatherIcon" + "<div>Tempeature: " + forecastTempeature.toFixed(1) + " °F" +  "</div><div>Humidity: " + forecastHumidity + "%</div></div></div>")
+                }
+            }
+        }
+        fiveDayForecastDisplay = true
+    })
+
+    })
