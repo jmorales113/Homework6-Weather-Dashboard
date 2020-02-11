@@ -49,5 +49,13 @@
   nav, section {
     padding: 200px 0;
   }
+
+  h2 {
+    text-align: center;
+  }
+
+  #currentDayBox {
+    border: 1px solid rgba(255,255,255,0.8);
+  }
   
   
