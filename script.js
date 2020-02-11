@@ -29,9 +29,20 @@ $.ajax({
     $("#currentTemperature").text(("Temperature: " + currentTempeature.toFixed(1) + " °F"))
     $("#currentHumidity").text("Humidity: " + response.main.humidity + "%")
     $("#currentWind").text("Wind Speed: " + response.wind.speed + " MPH")
+    
+
+    var APILink2 = "http://api.openweathermap.org/data/2.5/uvi/forecast?&appid=3c34658c8e0e9fdb71064b81293a3704&lat="
     lat = response.coord.lat
     lon = response.coord.lon
+    queryURL3 = APILink2 + lat + "&lon=" + lon
+    
+    $.ajax({
+        url: queryURL3,
+        method: "Get"
 
+    }).then(function(response){
+        $("#currentUV").text("UV Index: " + response[0].value)
+    })
 
 
 })
