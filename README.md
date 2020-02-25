@@ -9,3 +9,5 @@ Task: Build a weather dashboard application with search functionality to find cu
 Deployed application: https://jmorales113.github.io/Homework6-Weather-Dashboard/
 
 ![image](https://user-images.githubusercontent.com/57970306/75295540-b9844b80-57df-11ea-9315-c99ceb732d2f.png)
+
+![image](https://user-images.githubusercontent.com/57970306/75295753-44654600-57e0-11ea-9f20-87d54cdbcf1f.png)
