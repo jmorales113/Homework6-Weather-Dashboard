@@ -1,4 +1,4 @@
-# Homework6-Weather-Dashboard
+# Weather-Dashboard
 
 User Story: As a traveler
 I want to see the weather outlook for multiple cities
