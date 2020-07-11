@@ -6,7 +6,7 @@ so that I can plan a trip accordingly.
 
 Task: Build a weather dashboard application with search functionality to find current weather conditions and the future weather outlook for multiple cities.
 
-Deployed application: https://jmorales113.github.io/Homework6-Weather-Dashboard/
+Deployed application: https://jmorales113.github.io/Weather-Dashboard/
 
 ![image](https://user-images.githubusercontent.com/57970306/75295540-b9844b80-57df-11ea-9315-c99ceb732d2f.png)
 
